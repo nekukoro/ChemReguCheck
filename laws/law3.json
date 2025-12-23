@@ -1,0 +1,45 @@
+{
+
+  
+  "C#N": {
+    "name": "毒物(別表第一、七)",
+    "description": "シアン化水素",
+    "scope": ["itself"]
+  },
+  "[C-]#N.[Na+]":{
+    "name": "毒物(別表第一、八)",
+    "description": "シアン化ナトリウム",
+    "scope": ["itself"]
+  },
+
+
+  "[Hg]":{
+    "name": "毒物(別表第一、十五)",
+    "description": "水銀",
+    "scope": ["itself"]
+  },
+  "[Se]":{
+    "name": "毒物(別表第一、十六)",
+    "description": "セレン",
+    "scope": ["itself"]
+  },
+
+
+  "[As]":{
+    "name": "毒物(別表第一、二十一)",
+    "description": "ヒ素",
+    "scope": ["itself"]
+  },
+  "F":{
+    "name": "毒物(別表第一、二十二)",
+    "description": "フッ化水素",
+    "scope": ["itself"]
+  },
+
+  
+  "[P]=S":{
+    "name": "毒物(別表第一、二十七)",
+    "description": "硫化リン",
+    "scope": ["itself"]
+  }
+}

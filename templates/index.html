@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ChemReguCheck</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="headerArea">
+        <h1 id="titleText">化学物質 法規制チェッカー</h1>
+        <div class="headerBtn">
+            <button id="newsBtn">お知らせ</button>
+            <button id="supportLawBtn">対応している法令</button>
+            <button id="howToUseBtn">使い方</button>
+        </div>
+    </div>
+
+
+    <div id="precautionsOverlay">
+        <div id="precautions">
+            <h3>化学物質 法規制チェッカー</h3>
+            <p>このサイトは、物質名(日本語命名法、IUPAC命名法、SMILES記法)からその物質が法令で規制されているかを確認することを目指したものです。</p>
+            <p>この結果はあくまで簡易的な確認を行ったもので、"規制されているものを検出できない"あるいは"規制されていないものを検出する"場合があります。</p>
+        </div>
+    </div>
+
+
+    <div id="disclaimersOverlay">
+        <div id="disclaimers">
+            <h3>免責事項</h3>
+            <p> 本ツールは、<strong>出力結果の正確性、完全性、法的妥当性を保証するものではありません。</strong>実務や法的な判断が必要な場面では、必ず公的な情報源を直接ご確認ください。</p>
+            <p><strong>違法薬物の製造、爆発物の合成、その他法令に違反する行為や公序良俗に反する行為を助長、推奨するものではありません。</strong>本ツールを利用して行われた一切の行為について、開発者は責任を負いません。</p>
+            <p>本ツールの利用によって生じた、いかなるトラブル・損失・損害に対しても、開発者は一切の責任を負わないものとします。</p>
+        </div>
+    </div>
+
+
+    <div id="modalOverlay">
+        <div id="modalContent">
+            <h3 id="modalTitle">タイトル</h3>
+            <div id="modalBody">読み込み中...</div>
+            <button id="closeModalBtn">閉じる</button>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div id="searchArea">
+        <input type="text" id="chemicalInput" placeholder="日本語命名法、IUPAC命名法、SMILES記法で入力できます。" size="50">
+        <button id="confirmBtn" onclick="checkChemical()">確定</button>
+    </div>
+
+
+    <div class="result-wrapper">
+        <button id="copyBtn" class="copy-btn" style="display: none;">結果をコピー</button>
+        <div id="resultArea">
+            <p>ここに結果が表示されます</p>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

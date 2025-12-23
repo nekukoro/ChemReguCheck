@@ -1,0 +1,288 @@
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    background-color: #f7f8f9;
+    margin: 20px;
+    color: #202020;
+}
+
+
+#headerArea {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+}
+
+.headerBtn {
+    position: absolute;
+    right: 5%;
+    top: 0;
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+
+
+
+#searchArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 2px;
+}
+
+#chemicalInput {
+    width: 50%;
+    border-radius: 2px;
+    caret-color: blue;
+    outline: none;
+    color:rgb(0, 0, 0);
+    border: 1px solid #0a0a0a;
+    font-size: 15px;
+    transition: all 0.2s ease; /* アニメーションの設定 */
+}
+
+/* 入力しようとした時のアニメーション */
+#chemicalInput:focus {
+    box-shadow: 0 0 25px rgba(52, 152, 219, 0.3); /* 青い影 */
+    width: 60%; /* 少しだけ伸びる演出 */
+}
+
+#confirmBtn {
+    white-space: nowrap;
+    border-radius: 2px;
+    border: 1px solid #0a0a0a;
+    background-color: rgba(235, 235, 235, 0.9);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#confirmBtn:hover {
+    background-color: rgba(235, 235, 235, 0.9);
+    color: black;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+
+
+/* 結果表示エリア */
+.result-wrapper {
+    position: relative;
+    width: 60%;
+    min-width: 400px;
+    margin: 20px auto;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* コピー成功時の緑色 */
+.copy-btn.copied {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+#resultArea {
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    min-width: 400px;
+    padding: 2%;
+    padding-top: 1%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: auto;
+    max-height: 500px;
+}
+
+#resultArea li {
+    margin-bottom: 2%;
+    line-height: 1.5;
+}
+
+#resultArea small {
+    display: block;
+    font-size: 75%;
+}
+
+#resultArea li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+/* ローディング表示 */
+.loading-container {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px; /* 適度な高さを確保 */
+    padding: 20px;
+}
+
+/* くるくる回るリング */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+/* アニメーション定義 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+/* ヘッダーのボタンを押したときの */
+#modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalContent {
+    background-color: white;
+    padding: 20px;
+    width: 75%;
+    max-width: 600px;
+    max-height: 75%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#modalOverlay.active {
+    display: flex;
+}
+
+#modalTitle{
+    align-self: center;
+    line-height: 0.1;
+}
+
+#modalBody {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#closeModalBtn {
+    align-self: center;
+    padding: 8px 24px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+
+
+
+/* 起動時の警告 */
+#precautionsOverlay, #disclaimersOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: opacity 1s ease;
+}
+
+/* 1枚目 */
+#precautionsOverlay {
+    z-index: 2000;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 2枚目 */
+#disclaimersOverlay {
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fade-in {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.fade-out {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+#precautions, #disclaimers {
+    color: #0a0a0a;
+    font-size: 1.2rem;
+    max-width: 80%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}

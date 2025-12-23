@@ -1,0 +1,12 @@
+{
+  "NC(C)CC1=CC=CC=C1": {
+    "name": "第二条一項",
+    "description": "フエニルアミノプロパン及びその塩類",
+    "scope": ["itself", "salts"]
+  },
+  "CNC(C)CC1=CC=CC=C1": {
+    "name": "第二条一項",
+    "description": "フエニルメチルアミノプロパン及びその塩類",
+    "scope": ["itself", "salts"]
+  }
+}
