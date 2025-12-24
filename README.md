@@ -45,7 +45,7 @@
 │   ├── law1.json          # 法律A
 │   └── law2.json          # 法律B
 ├── requirements.txt        # 依存ライブラリ一覧
-├── third_party_licenses.txt # 第三者ライセンス表示
+├── THIRD_PARTY_LICENSES.txt # 第三者ライセンス表示
 ├── LICENSE                 # 本アプリのライセンス
 └── README.md               # 説明書
 ```
@@ -75,3 +75,5 @@ RDKit: BSD-3-Clause License
 OPSIN: MIT License
 
 Flask: BSD-3-Clause License
+
+各ライセンスの詳細は THIRD_PARTY_LICENSES.txt に記載しています。
