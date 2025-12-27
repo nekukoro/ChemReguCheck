@@ -43,6 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener('DOMContentLoaded',pageLoad)
+function pageLoad(){
+    var chemicalInput = document.getElementById('chemicalInput');
+    chemicalInput.addEventListener('keydown', enterKeyPress);
+}
+
+function enterKeyPress(event){
+    if(event.key === 'Enter'){
+        checkChemical();
+    }
+}
+
+
+
+
 async function checkChemical() {
     const text = document.getElementById('chemicalInput').value;
     const resultArea = document.getElementById('resultArea');
