@@ -58,10 +58,16 @@ function enterKeyPress(event){
 
 
 
+let latestRequestId = 0;
+
 async function checkChemical() {
     const text = document.getElementById('chemicalInput').value;
     const resultArea = document.getElementById('resultArea');
     const inputVal = document.getElementById("chemicalInput").value;
+
+    latestRequestId++;
+    const myRequestId = latestRequestId;
+    if(!text) return;
 
     if(copyBtn) copyBtn.style.display = 'none';
     
@@ -80,6 +86,13 @@ async function checkChemical() {
         });
 
         const data = await response.json();
+
+
+        if (myRequestId !== latestRequestId) {
+            console.log("古いリクエストの結果が遅れて届いたので、無視しました。");
+            return;
+        }
+
 
         if (data.error) {
             resultArea.innerHTML = `<p style="color:red">エラー: ${data.error}</p>`;
@@ -115,8 +128,10 @@ async function checkChemical() {
         if(copyBtn) copyBtn.style.display = 'block';
 
     } catch (err) {
-        console.error(err);
-        resultArea.innerHTML = `<p style="color:red; text-align:center;">通信エラーが発生しました。<br>もう一度お試しください。</p>`;
+        if (myRequestId === latestRequestId) {
+            console.error(err);
+            resultArea.innerHTML = `<p style="color:red; text-align:center;">通信エラーが発生しました。<br>もう一度お試しください。</p>`;
+        }
     }
 }
 
