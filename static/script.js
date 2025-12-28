@@ -43,17 +43,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener('DOMContentLoaded',pageLoad)
-function pageLoad(){
-    var chemicalInput = document.getElementById('chemicalInput');
-    chemicalInput.addEventListener('keydown', enterKeyPress);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const chemicalInput = document.getElementById('chemicalInput');
 
-function enterKeyPress(event){
-    if(event.key === 'Enter'){
-        checkChemical();
+    // Safari対策のフラグ管理
+    let isIME = false; 
+
+    if (chemicalInput) {
+        
+        // 変換開始：フラグを立てる
+        chemicalInput.addEventListener('compositionstart', () => {
+            isIME = true;
+        });
+
+        // 変換終了：フラグを下ろす(が、時差)
+        chemicalInput.addEventListener('compositionend', () => {
+            isIME = true; // 念のためTrueのままにしておく
+            // フラグを下ろす予約をする
+            setTimeout(() => {
+                isIME = false;
+            }, 50);
+        });
+
+        // キー入力判定
+        chemicalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                // 変換中（または変換直後のSafariのEnter）なら無視！
+                if (isIME) {
+                    e.preventDefault();
+                    return;
+                }
+
+                // 完全に文字が確定している時だけ実行
+                e.preventDefault();
+                checkChemical();
+            }
+        });
     }
-}
+});
 
 
 
@@ -70,13 +97,32 @@ async function checkChemical() {
     if(!text) return;
 
     if(copyBtn) copyBtn.style.display = 'none';
-    
+
+
+    const loadingMessages = [
+        "データベースを検索中...",
+        "サーバーを起動しています（少々時間がかかります）...",
+        "構造式を解析中...",
+        "もうすぐ結果が出ます..."
+    ];
+
     resultArea.innerHTML = `
         <div class="loading-container">
             <div class="spinner"></div>
-            <p style="color:#666;">データベースを検索中...</p>
+            <p style="color:#666;" id="loading-msg">${loadingMessages[0]}</p>
         </div>
     `;
+
+    let msgIndex = 0;
+    const intervalId = setInterval(() => {
+        msgIndex = (msgIndex + 1) % loadingMessages.length;
+        const el = document.getElementById("loading-msg");
+        if (el) {
+            el.innerText = loadingMessages[msgIndex];
+        }
+    }, 4500);
+
+
 
     try {
         const response = await fetch('/api/search', {
@@ -132,6 +178,9 @@ async function checkChemical() {
             console.error(err);
             resultArea.innerHTML = `<p style="color:red; text-align:center;">通信エラーが発生しました。<br>もう一度お試しください。</p>`;
         }
+    } finally {
+        // 成功しても失敗しても、必ずここでタイマーを止める
+        clearInterval(intervalId);
     }
 }
 
