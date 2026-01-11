@@ -1,6 +1,35 @@
 {
 
-  
+  "CCO[P@](=S)(C1=CC=CC=C1)OC2=CC=C(C=C2)[N+](=O)[O-]": {
+    "name": "毒物(別表第一、一)",
+    "description": "エチルパラニトロフエニルチオノベンゼンホスホネイト(EPN) //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "[P]": {
+    "name": "毒物(別表第一、二)",
+    "description": "黄燐",
+    "scope": ["itself"]
+  },
+  "ClC12C(Cl)C3C(C1Cl)C2(Cl)C(Cl)(Cl)C3(Cl)Cl": {
+    "name": "毒物(別表第一、三)",
+    "description": "オクタクロルテトラヒドロメタノフタラン //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "CN(P(=O)(N(C)C)N(C)C)N(C)C": {
+    "name": "毒物(別表第一、四)",
+    "description": "オクタメチルピロホスホルアミド(シュラーダン) //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "C[N+]1(CCc2cc(Oc3cc4CC[N+]5(C)C[C@@H]4cc3Oc3c(O)c(OC)cc(C[C@H]1c1cc(O)c(OC)cc1)c3)c(O)cc2C)C": {
+    "name": "毒物(別表第一、五)",
+    "description": "クラーレ(代表例：ツボクラリン) //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "[Pb](C)(C)(C)(C)": {
+    "name": "毒物(別表第一、六)",
+    "description": "四アルキル鉛",
+    "scope": ["itself", "derivatives"]
+  },
   "C#N": {
     "name": "毒物(別表第一、七)",
     "description": "シアン化水素",
@@ -12,6 +41,36 @@
     "scope": ["itself"]
   },
 
+  "CCOP(=S)(OCC)Oc1ccc([N+](=O)[O-])cc1": {
+    "name": "毒物(別表第一、九)",
+    "description": "ジエチルパラニトロフエニルチオホスフエイト（パラチオン） //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "CC1=CC(=C(C=C1)[N+](=O)[O-])[N+](=O)[O-]": {
+    "name": "毒物(別表第一、十)",
+    "description": "ジニトロクレゾール //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "CC(C)CC1=CC(=C(C=C1)[N+](=O)[O-])[N+](=O)[O-]O": {
+    "name": "毒物(別表第一、十一)",
+    "description": "二・四―ジニトロ―六―（一―メチルプロピル）―フエノール //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "CSCCOP(=S)(OC)OC": {
+    "name": "毒物(別表第一、十二)",
+    "description": "ジメチルエチルメルカプトエチルチオホスフエイト（メチルジメトン） //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "CC(C)C(Cl)=CCOP(=O)(OC)N(CC)CC": {
+    "name": "毒物(別表第一、十三)",
+    "description": "ジメチル―（ジエチルアミド―一―クロルクロトニル）―ホスフエイト //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "O=P(OC)(Oc1ccc(cc1)[N+](=O)[O-])SCC": {
+    "name": "毒物(別表第一、十四)",
+    "description": "ジメチルパラニトロフエニルチオホスフエイト（メチルパラチオン） //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
 
   "[Hg]":{
     "name": "毒物(別表第一、十五)",
@@ -23,8 +82,28 @@
     "description": "セレン",
     "scope": ["itself"]
   },
+  "NNC(=S)N": {
+    "name": "毒物(別表第一、十七)",
+    "description": "チオセミカルバジド",
+    "scope": ["itself"]
+  },
 
+  "CCOP(=O)(OCC)OP(=O)(OCC)OCC": {
+    "name": "毒物(別表第一、十八)",
+    "description": "テトラエチルピロホスフエイト（TEPP） //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
 
+  "CN1CCC[C@H]1c2cccnc2": {
+    "name": "毒物(別表第一、十九)",
+    "description": "ニコチン",
+    "scope": ["itself"]
+  },
+  "[Ni](C#O)(C#O)(C#O)(C#O)": {
+    "name": "毒物(別表第一、二十)",
+    "description": "ニッケルカルボニル",
+    "scope": ["itself"]
+  },
   "[As]":{
     "name": "毒物(別表第一、二十一)",
     "description": "ヒ素",
@@ -36,10 +115,31 @@
     "scope": ["itself"]
   },
 
-  
-  "[P]=S":{
+  "ClC12C(Cl)=C(Cl)C3(Cl)C1[C@H]1[C@@H]4O[C@@H]4[C@H]1[C@H]23": {
+    "name": "毒物(別表第一、二十三)",
+    "description": "ヘキサクロルエポキシオクタヒドロエンドエンドジメタノナフタリン（エンドリン） //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+  "ClC1=C(Cl)C2(Cl)C(Cl)(Cl)C1(Cl)CS(=O)OC2": {
+    "name": "毒物(別表第一、二十四)",
+    "description": "ヘキサクロルヘキサヒドロメタノベンゾジオキサチエピンオキサイド（エンドスルファン/ベンゾエピン） //作成者メモsmilesの確認が不十分",
+    "scope": ["itself"]
+  },
+
+    "FCC(=O)O": {
+    "name": "毒物(別表第一、二十五)",
+    "description": "モノフルオール酢酸",
+    "scope": ["itself"]
+  },
+  "FCC(=O)N": {
+    "name": "毒物(別表第一、二十六)",
+    "description": "モノフルオール酢酸アミド",
+    "scope": ["itself"]
+  },
+  "P4S3": {
     "name": "毒物(別表第一、二十七)",
-    "description": "硫化リン",
+    "description": "硫化燐",
     "scope": ["itself"]
   }
+
 }
