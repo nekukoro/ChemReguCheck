@@ -16,7 +16,12 @@
     "name": "麻薬(別表第一、七十二)",
     "description": "モルヒネ及びその塩類",
     "scope": ["itself", "salts"]
+  },
 
+  " CCC(=O)N(C1CCN(CCc2ccccc2)CC1)c1ccccc1":{
+    "name": "別表第一第七十七号、麻薬、麻薬原材料植物、向精神薬、麻薬向精神薬原料等を指定する政令(九十四)",
+    "description": "Ｎ―（一―フェネチル―四―ピペリジル）プロピオンアニリド（別名フェンタニル）及びその塩類",
+    "scope": ["itself", "salts"]
   }
 
 
