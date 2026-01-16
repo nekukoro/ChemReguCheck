@@ -20,9 +20,9 @@
     "description": "オクタメチルピロホスホルアミド(シュラーダン) //作成者メモsmilesの確認が不十分",
     "scope": ["itself"]
   },
-  "C[N+]1(CCc2cc(Oc3cc4CC[N+]5(C)C[C@@H]4cc3Oc3c(O)c(OC)cc(C[C@H]1c1cc(O)c(OC)cc1)c3)c(O)cc2C)C": {
+  "COc1cc2CC[N+](C)(C)[C@@H]3Cc4ccc(O)c(Oc5cc6[C@H](Cc7ccc(Oc(c1O)c23)cc7)N(C)CCc6cc5OC)c4": {
     "name": "毒物(別表第一、五)",
-    "description": "クラーレ(代表例：ツボクラリン) //作成者メモsmilesの確認が不十分",
+    "description": "クラーレ(代表例：ツボクラリン)",
     "scope": ["itself"]
   },
   "[Pb](C)(C)(C)(C)": {
@@ -51,9 +51,9 @@
     "description": "ジニトロクレゾール //作成者メモsmilesの確認が不十分",
     "scope": ["itself"]
   },
-  "CC(C)CC1=CC(=C(C=C1)[N+](=O)[O-])[N+](=O)[O-]O": {
+  "CCC(C)c1cc(cc(c1OC(=O)C)[N+](=O)[O-])[N+](=O)[O-]": {
     "name": "毒物(別表第一、十一)",
-    "description": "二・四―ジニトロ―六―（一―メチルプロピル）―フエノール //作成者メモsmilesの確認が不十分",
+    "description": "二・四―ジニトロ―六―（一―メチルプロピル）―フエノール （ジノセブアセタート） //作成者メモsmilesの確認が不十分",
     "scope": ["itself"]
   },
   "CSCCOP(=S)(OC)OC": {
@@ -99,7 +99,7 @@
     "description": "ニコチン",
     "scope": ["itself"]
   },
-  "[Ni](C#O)(C#O)(C#O)(C#O)": {
+  "[O+]#C[Ni-4](C#[O+])(C#[O+])C#[O+]": {
     "name": "毒物(別表第一、二十)",
     "description": "ニッケルカルボニル",
     "scope": ["itself"]
@@ -136,9 +136,9 @@
     "description": "モノフルオール酢酸アミド",
     "scope": ["itself"]
   },
-  "P4S3": {
+  "[P]=S": {
     "name": "毒物(別表第一、二十七)",
-    "description": "硫化燐",
+    "description": "硫化燐 //作成者メモsmilesの確認が不十分",
     "scope": ["itself"]
   }
 
